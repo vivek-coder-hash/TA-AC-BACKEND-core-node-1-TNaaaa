@@ -9,4 +9,4 @@ console.log(parsedUrl.path);*/
 var url = require("url")
 const parsedUrl = url.parse("https://www.google.com/" , true)
 
-console.log(parsedUrl)
+console.log(parsedUrl.protocol)
