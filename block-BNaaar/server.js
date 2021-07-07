@@ -9,7 +9,8 @@ function handleRequest(req,res) {
     var pathname = parsedUrl.pathname
   console.log(req.method , req.url , pathname)
   if (req.method === "GET" && req.url === "/") {
-    res.write("welcome to index page")
+      res.setHeader("Content-type" , "text/plain")
+    res.write("welcome to home page")
     res.end()
 }
 
@@ -20,9 +21,9 @@ else if (req.method === "GET" && req.url === "/about") {
 }
 
 else if (req.method === "POST" && req.url === "/about") {
+    res.setHeader("Content-Type" , "application/json")
     
-    res.write(`{message: this is a post request}`)
-    res.end()
+    res.end("{message: this is a post request}")
 }
 
 }
